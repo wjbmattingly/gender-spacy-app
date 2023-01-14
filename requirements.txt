@@ -1,0 +1,3 @@
+gender-spacy
+toml
+spacy-streamlit
