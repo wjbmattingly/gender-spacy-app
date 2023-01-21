@@ -6,7 +6,7 @@ from gender_spacy import gender_spacy as gs
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    nlp = gs.GenderParser("en_core_web_trf")
+    nlp = gs.GenderParser("en_core_web_sm")
     return nlp
 
 st.image("https://github.com/sidatasciencelab/gender-spacy/raw/main/images/genderspacy-logo.png")
@@ -21,7 +21,7 @@ In December 1941 Miss Densmore was appointed as consultant at The National Archi
 """
 
 project_data = toml.load("project.toml")
-text = st.text_area("Paste Text Here", value="Harry Potter was the main character. He was only 11.", height=100)
+text = st.text_area("Paste Text Here", value=default_text, height=100)
 
 nlp = load_model()
 doc = nlp.process_doc(text)
